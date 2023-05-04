@@ -7,18 +7,30 @@ const MapFilter = () => {
   useEffect(() => {
     axios.get("https://jsonplaceholder.typicode.com/users").then((user) => {
       setUsers(user.data);
-      console.log(users);
     });
   }, [users]);
 
+  const mapData = () => {
+    // let mappedArray = users.map((user) => user.id * 2);
+    // console.log(mappedArray);
+
+    let filterData = users.filter((user) => {
+      return user.name === "Leanne Graham";
+    });
+    console.log(filterData);
+  };
+
   return (
-    <div>
-      <h1>Users</h1>
-      <div>
-        {users.map((user) => {
-          return <p>{user.name}</p>;
-        })}
+    <div className="flex justify-center items-center flex-col">
+      <h1 className="">Users</h1>
+      <div className="card flex flex-row justify-center items-center">
+        {users.map((user) => (
+          <div className="card-item border mx-2">
+            <p>{user.name}</p>
+          </div>
+        ))}
       </div>
+      <button onClick={mapData}>Click here</button>
     </div>
   );
 };
