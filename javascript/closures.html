@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lexical scoping & Closures</title>
+  </head>
+  <!-- A closure gives you access to an outer function's scope from an inner function -->
+  <body style="background-color: black">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+
+  <script>
+    // LexicalScope
+    function outer() {
+      let outerVar = "I am outside!";
+
+      function inner() {
+        console.log(outerVar);
+      }
+      inner();
+    }
+    outer();
+
+    // Lexical scope means that in a nested group of functions, the inner functions have access to the variables and other resources of their parent scope.
+
+    // Closure
+    function outer() {
+      let outerVar = "I am outside!";
+
+      function inner() {
+        let innerVar = "I am inside!";
+        console.log(outerVar);
+      }
+      return inner;
+    }
+
+    let innerFn = outer();
+    innerFn();
+
+    // Closure is when a function is able to remember and access its lexical scope even when that function is executing outside its lexical scope.
+
+    // Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+  </script>
+
+  <!-- Practical example of closures -->
+  <script>
+    // document.getElementById("orange").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    function clickHandler(color) {
+      // document.body.style.backgroundColor = `${color}`
+
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+  </script>
+</html>
