@@ -6,6 +6,8 @@ array.forEach((element) => {
   console.log(element);
 });
 
+// Output: a b c d e f g
+
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // const newNums = myNums.filter((number) => number > 4);
