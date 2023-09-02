@@ -1,0 +1,3 @@
+In React, hooks are functions that allow you to "hook into" or use state and other React features in functional components. They were introduced in React 16.8 to provide a way to manage component state and side effects without the need for class components. Hooks help improve the reusability and maintainability of code in React applications.
+
+Definition: Hooks in React are functions that let you use state, lifecycle features, and other React features in functional components. They allow functional components to manage local component state and perform side effects, making it possible to write complex logic within functional components.
