@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const Fetch = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -10,6 +10,7 @@ const Fetch = () => {
           "https://jsonplaceholder.typicode.com/posts/1"
         );
         const json = await response.json();
+        console.log("Data fetched:", json);
         setData(json);
       } catch (error) {
         console.error("Error fetching data:", error);
