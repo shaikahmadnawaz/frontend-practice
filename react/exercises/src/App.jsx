@@ -1,5 +1,6 @@
 import "./App.css";
 import Fetch from "./Fetch";
+import FileUploader from "./FileUploader";
 import Timer from "./Timer";
 import Todo from "./Todo";
 
@@ -8,7 +9,8 @@ function App() {
     <>
       {/* <Fetch /> */}
       {/* <Timer /> */}
-      <Todo />
+      {/* <Todo /> */}
+      <FileUploader />
     </>
   );
 }
