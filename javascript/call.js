@@ -1,3 +1,5 @@
+// call() method allows an object to use the method (function) of another object.
+
 function greet(name) {
   console.log(`Hello, ${name}! My name is ${this.name}.`);
 }
