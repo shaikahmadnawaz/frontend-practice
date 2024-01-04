@@ -11,8 +11,6 @@ The call stack is a fundamental concept in the JavaScript runtime. It's a data s
 
 Example of the call stack:
 
-javascript
-Copy code
 function foo() {
   console.log("foo");
   bar();
