@@ -1,3 +1,4 @@
+import ContactUs from "./ContactUs";
 import Fetch from "./Fetch";
 import FileUploader from "./FileUploader";
 import LoginRegistration from "./LoginRegistration";
@@ -9,7 +10,7 @@ import Weather from "./Weather";
 
 function App() {
   return (
-    <main className="w-screen h-screen text-white mx-auto text-center pt-14">
+    <>
       {/* <Fetch /> */}
       {/* <Timer /> */}
       {/* <Todo /> */}
@@ -17,8 +18,9 @@ function App() {
       {/* <LoginRegistration /> */}
       {/* <Weather /> */}
       {/* <SearchBar /> */}
-      <Pagination />
-    </main>
+      {/* <Pagination /> */}
+      <ContactUs />
+    </>
   );
 }
 

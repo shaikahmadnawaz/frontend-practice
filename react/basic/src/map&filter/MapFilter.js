@@ -5,9 +5,12 @@ const MapFilter = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/users").then((user) => {
-      setUsers(user.data);
-    });
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+      });
   }, [users]);
 
   const mapData = () => {
