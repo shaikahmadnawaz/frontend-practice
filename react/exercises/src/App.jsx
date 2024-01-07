@@ -1,6 +1,7 @@
 import ContactUs from "./ContactUs";
 import Fetch from "./Fetch";
 import FileUploader from "./FileUploader";
+import JobBoard from "./JobBoard";
 import LoginRegistration from "./LoginRegistration";
 import Pagination from "./Pagination";
 import SearchBar from "./SearchBar";
@@ -19,7 +20,8 @@ function App() {
       {/* <Weather /> */}
       {/* <SearchBar /> */}
       {/* <Pagination /> */}
-      <ContactUs />
+      {/* <ContactUs /> */}
+      <JobBoard />
     </>
   );
 }
