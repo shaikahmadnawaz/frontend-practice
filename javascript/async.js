@@ -41,6 +41,9 @@ Web APIs are provided by the browser or the environment in which JavaScript is r
 Task Queue (Callback Queue):
 When asynchronous operations are completed in the Web API environment, the corresponding callback functions (or events) are not immediately executed. Instead, they are placed in a queue called the task queue (or callback queue). The event loop's job is to continuously check the call stack and task queue, and if the call stack is empty, move tasks from the queue to the stack for execution.
 
+MicroTask Queue:
+Promises are executed in this microtask queue. They are executed before the next task is executed. If the task queue is empty and there are pending microtasks, the event loop will execute all of the pending microtasks before moving on to the next task. Micro task queues has high priority than task queues.
+
 Event Loop:
 The event loop is a critical component of the JavaScript runtime environment. Its primary job is to continuously check the call stack and task queue. If the call stack is empty, it picks up tasks from the task queue and pushes them onto the call stack for execution. This enables asynchronous code to be executed after synchronous code has completed.
 
