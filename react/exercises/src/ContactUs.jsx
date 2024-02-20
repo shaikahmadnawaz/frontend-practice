@@ -56,10 +56,10 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="mx-auto max-w-7xl py-12 md:py-24">
-      <h1 className="text-center text-4xl font-bold">Contact Us</h1>
+    <div className="py-12 mx-auto max-w-7xl md:py-24">
+      <h1 className="text-4xl font-bold text-center">Contact Us</h1>
 
-      <form className="flex flex-col space-y-4 mt-8 " onSubmit={handleSubmit}>
+      <form className="flex flex-col mt-8 space-y-4" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Enter your name"
@@ -67,7 +67,7 @@ const ContactUs = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           id="name"
-          className="flex h-10 w-full rounded-md border px-3 py-2 text-sm placeholder:text-gray-500 border-gray-700"
+          className="flex w-full h-10 px-3 py-2 text-sm border border-gray-700 rounded-md placeholder:text-gray-500"
         />
 
         <input
@@ -75,7 +75,7 @@ const ContactUs = () => {
           placeholder="Enter your email"
           name="email"
           value={email}
-          className="flex h-10 w-full rounded-md border px-3 py-2 text-sm placeholder:text-gray-500 border-gray-700"
+          className="flex w-full h-10 px-3 py-2 text-sm border border-gray-700 rounded-md placeholder:text-gray-500"
           onChange={(e) => setEmail(e.target.value)}
           id="email"
         />
@@ -86,12 +86,12 @@ const ContactUs = () => {
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="flex h-64 w-full rounded-md border px-3 py-2 text-sm placeholder:text-gray-500 border-gray-700"
+          className="flex w-full h-64 px-3 py-2 text-sm border border-gray-700 rounded-md placeholder:text-gray-500"
         ></textarea>
 
         <button
           type="submit"
-          className="w-full rounded-md bg-black text-white py-3 px-2 font-semibold shadow-md hover:bg-black/90"
+          className="w-full px-2 py-3 font-semibold text-white bg-black rounded-md shadow-md hover:bg-black/90"
         >
           Send Message
         </button>
