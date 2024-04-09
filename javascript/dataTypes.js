@@ -49,3 +49,29 @@ console.log(typeof bigInt); // bigint
 console.log(typeof obj); // object
 console.log(typeof arr); // object
 console.log(typeof func); // function
+
+// Stack (Primitive) and Heap (Non-primitive)
+
+// In JavaScript, the stack is used to hold primitive values and reference types are stored in the heap. When you declare a variable or a function, it is stored in the stack. When you create an object, the object is stored in the heap and a reference to the object is stored in the stack.
+
+// When you pass a primitive value to a function, the function receives a copy of the value. When you pass a reference type to a function, the function receives a reference to the object. This means that when you change the object inside the function, the changes are reflected outside the function as well.
+
+// Primitive data types are passed by value and non-primitive data types are passed by reference.
+
+let x = 10;
+let y = x;
+
+x = 20;
+
+console.log(x); // 20
+console.log(y); // 10
+
+let p = { name: "John" };
+let q = p;
+
+p.name = "Doe";
+
+console.log(p.name); // Doe
+console.log(q.name); // Doe
+
+// In the above example, when we change the value of x, the value of y remains the same. This is because primitive data types are passed by value. When we change the value of p.name, the value of q.name also changes. This is because non-primitive data types are passed by reference.
