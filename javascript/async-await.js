@@ -6,7 +6,7 @@ function fetchData() {
       // If the operation is successful, resolve the promise
       resolve(data);
       // If an error occurs, reject the promise
-      // reject(new Error('Failed to fetch data.'));
+      reject(new Error("Failed to fetch data."));
     }, 2000);
   });
 }
