@@ -9,6 +9,10 @@ function areAnagrams(str1, str2) {
   const frequencyCounter1 = {};
   const frequencyCounter2 = {};
   for (let val of str1) {
+    console.log(val);
+    console.log(frequencyCounter1[val]);
+    console.log(frequencyCounter1[val] || 0);
+    console.log(frequencyCounter1[val] || 0) + 1;
     frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1;
   }
   for (let val of str2) {
