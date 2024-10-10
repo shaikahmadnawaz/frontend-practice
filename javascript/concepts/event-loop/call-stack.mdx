@@ -1,0 +1,12 @@
+# Call Stack
+
+In JavaScript, the **call stack** is a mechanism used to manage the execution of functions. It operates in a **Last In, First Out (LIFO)** manner, meaning the most recent function called gets executed first. When a function is invoked, it's added to the top of the stack. Once the function completes, it's removed from the stack, and the control moves back to the next function down.
+
+Here's a simplified process:
+
+1. **Function call**: When a function is called, it gets pushed onto the stack.
+2. **Execution**: The engine executes the function.
+3. **Completion**: Once finished, the function is popped off the stack.
+4. **Error**: If the stack grows too large due to too many function calls (e.g., infinite recursion), it results in a "stack overflow" error.
+
+The call stack is crucial in handling **synchronous** operations in JavaScript, as it ensures that functions are executed in order and that the current function completes before moving on to the next.

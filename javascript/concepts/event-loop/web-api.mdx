@@ -1,0 +1,94 @@
+# Web APIs in JavaScript
+
+In JavaScript, **Web APIs** are built-in browser-provided interfaces that allow you to interact with various features and services of the web environment. These APIs enable developers to perform tasks such as making HTTP requests, manipulating the DOM, accessing user data, or using browser-specific functionalities. Here are some commonly used Web APIs:
+
+### 1. **DOM (Document Object Model) API**
+
+- Provides methods to manipulate HTML elements.
+- Example: `document.getElementById()`, `document.createElement()`
+
+### 2. **Fetch API**
+
+- Used for making HTTP requests to fetch resources from a server.
+- Example:
+  ```javascript
+  fetch("https://api.example.com/data")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+  ```
+
+### 3. **Geolocation API**
+
+- Allows access to the user's geographical location (with permission).
+- Example:
+  ```javascript
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position.coords.latitude, position.coords.longitude);
+  });
+  ```
+
+### 4. **LocalStorage / SessionStorage API**
+
+- Enables storing key-value pairs in the browser either permanently (localStorage) or temporarily (sessionStorage).
+- Example:
+  ```javascript
+  localStorage.setItem("key", "value");
+  const value = localStorage.getItem("key");
+  ```
+
+### 5. **Canvas API**
+
+- Provides methods for drawing graphics, animations, and images on the browser screen.
+- Example:
+  ```javascript
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.fillRect(20, 20, 150, 100);
+  ```
+
+### 6. **Web Storage API**
+
+- Manages storage that persists across browser sessions.
+- `localStorage` and `sessionStorage` allow data to be stored in the browser.
+- Example:
+  ```javascript
+  localStorage.setItem("user", JSON.stringify({ name: "Alice" }));
+  ```
+
+### 7. **Notification API**
+
+- Allows the web app to send notifications to the user.
+- Example:
+  ```javascript
+  new Notification("Hello, World!");
+  ```
+
+### 8. **WebSockets API**
+
+- Provides a way to open a two-way communication channel between the browser and a server.
+- Example:
+  ```javascript
+  const socket = new WebSocket("ws://example.com/socket");
+  socket.onmessage = (event) => console.log(event.data);
+  ```
+
+### 9. **Web Workers API**
+
+- Allows the creation of background threads to perform tasks without blocking the main thread.
+- Example:
+  ```javascript
+  const worker = new Worker("worker.js");
+  worker.postMessage("Hello, Worker!");
+  ```
+
+### 10. **Media API**
+
+- Lets developers access media devices like camera and microphone.
+- Example:
+  ```javascript
+  navigator.mediaDevices
+    .getUserMedia({ video: true })
+    .then((stream) => (videoElement.srcObject = stream));
+  ```
+
+These Web APIs extend JavaScript's capabilities by enabling interactions with the browser and external resources, making modern web applications more dynamic and feature-rich.

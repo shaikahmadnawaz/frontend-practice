@@ -1,0 +1,51 @@
+# Event Loop in JavaScript
+
+In JavaScript, the **event loop** is a mechanism that allows asynchronous code (e.g., callbacks, promises, or timers) to run alongside synchronous code while maintaining a non-blocking environment. JavaScript is single-threaded, meaning it can only execute one task at a time. The event loop manages the execution of tasks and handles asynchronous operations efficiently.
+
+### Key Components of the Event Loop:
+
+1. **Call Stack**: This holds the execution context of the functions being run. Functions are executed one by one (synchronously) and removed from the stack once they finish.
+
+2. **Web APIs**: These are browser-provided features (like `setTimeout`, `fetch`, DOM events) that run asynchronously. They handle tasks in the background without blocking the call stack.
+
+3. **Callback Queue** (or Task Queue): When asynchronous tasks (like `setTimeout` or `fetch`) complete, their callbacks are placed in this queue, waiting to be added to the call stack for execution.
+
+4. **Microtask Queue**: This is a special queue for higher-priority tasks, such as promise callbacks or `MutationObserver`. It runs before the regular task queue after the current stack is empty.
+
+### How the Event Loop Works:
+
+- When JavaScript code runs, functions are added to the **call stack** and executed one after the other.
+- If a function contains an asynchronous operation (e.g., `setTimeout`), the operation is passed to a **Web API** (handled by the browser or Node.js), and the function continues executing synchronously.
+- Once the asynchronous operation completes, the callback is placed in the **callback queue** or **microtask queue**.
+- The **event loop** continuously checks if the call stack is empty. If it is, it moves the first task from the **microtask queue** (promises, etc.) to the call stack for execution.
+- After all microtasks are executed, the event loop picks up tasks from the **callback queue**.
+
+### Example:
+
+```javascript
+console.log("Start"); // 1. Executed first (sync)
+
+setTimeout(() => {
+  console.log("Timer done"); // 4. Runs after 2 seconds (async)
+}, 2000);
+
+Promise.resolve().then(() => {
+  console.log("Promise resolved"); // 3. Microtask queue, runs after call stack is empty
+});
+
+console.log("End"); // 2. Executed immediately after 'Start' (sync)
+```
+
+**Output**:
+
+```
+Start
+End
+Promise resolved
+Timer done
+```
+
+### Summary:
+
+- The **event loop** ensures that JavaScript executes non-blocking, allowing asynchronous operations to run in the background while continuing to execute synchronous code.
+- It checks the **call stack**, **microtask queue**, and **callback queue** in a loop to manage the execution of code in the correct order.
